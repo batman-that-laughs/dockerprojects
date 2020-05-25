@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.6.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.couchbaseexample'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '13'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework:spring-tx')
+	compile('org.springframework.security:spring-security-core')
+	compile('com.couchbase.client:java-client')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+// test {
+// 	useJUnitPlatform()
+// }
+task(run, dependsOn: 'classes', type: JavaExec) {
+    main = 'com.couchbase.DockerdemoApplication'
+    classpath = sourceSets.main.runtimeClasspath
+}
