@@ -1,0 +1,11 @@
+FROM couchbase:community-6.5.0
+
+# CMD ["cd /home/darkpool/dockerprojects/couchbaseTest1 && cp configure.sh /opt/couchbase"]
+
+# COPY 
+
+CMD ["pwd"]
+
+
+CMD ["configure.sh"]
+# /opt/couchbase/
